@@ -8,7 +8,6 @@ class Therion < Formula
   head "https://github.com/therion/therion.git"
 
   depends_on "cmake" => :build
-  depends_on "catch2" => :build
   depends_on "fmt" => :build
   depends_on "freetype"
   depends_on "ghostscript"
@@ -31,7 +30,7 @@ class Therion < Formula
     ENV.prepend_path "PATH", "/Library/TeX/texbin"
 
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", "-DUSE_BUNDLED_CATCH2:BOOL=ON", *std_cmake_args
       system "make", "install"
     end
   end
