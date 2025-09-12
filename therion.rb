@@ -17,7 +17,6 @@ class Therion < Formula
   depends_on "libpng"
   depends_on "pkg-config"
   depends_on "proj"
-  depends_on "tcl-tk"
   depends_on "vtk"
   depends_on "wxwidgets"
   depends_on "zlib"
